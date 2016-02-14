@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Secured Content</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+	<style type="text/css">
+		body {
+			padding: 1em;
+		}
+		#un {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Description</h1>
+		<p>This demonstrates Spring Session and Spring Security auto-configuration with Spring Boot.</p>
+		<p>You can use Redis, Hazelcast, or a simple in-memory map.</p>
+
+		<h1>Logged in as</h1>
+
+		<p>You are currently logged with session id <span id="un" th:text="${#httpSession.id}">3a61af2f-f17d-49b4-8676-68b19717f252</span>.</p>
+
+		<form action="/logout" th:action="@{/logout}" method="post">
+			<input type="submit" value="Log Out"/>
+		</form>
+	</div>
+</body>
+</html>
